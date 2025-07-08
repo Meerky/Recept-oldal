@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Recept részletei</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="../css/recipe.css">
+     
+  </head>
+  <body>
+    <!-- <div id="recipe-detail" class="recipe-detail-container"> recept oldal</div> -->
+    <header>
+      <h1>Receptek</h1>
+      
+    </header>
+    <div id="search-section">
+      <input type="text" id="searchInput" placeholder="Keresés recept vagy alapanyag szerint...">
+      <button id="resetButton">Vissza a teljes listához</button>
+      <button id="searchByIngredients">Keresés</button>
+    </div>
+      <!-- <div class="filter-wrapper">
+      <button id="toggleFilter">Hozzávalók szűrő ▼</button>
+      <div id="ingredient-filters" class="filters hidden"></div>
+    </div>  -->
+    <main>
+      <!-- 🔘 Szűrőgombok -->
+      <section id="filter-buttons" class="filter-buttons">
+        <div class="btn-group" id="categoryButtons">
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-category="all">Mind</button>
+            <button class="filter-btn" data-category="Levesek">Levesek</button>
+            <button class="filter-btn" data-category="Főételek">Főételek</button>
+            <button class="filter-btn" data-category="Főzelékek">Főzelékek</button>
+            <button class="filter-btn" data-category="Desszertek">Desszertek</button>
+            <button class="filter-btn" data-category="Kenyerek">Kenyerek</button>
+          </div>
+      </div>
+      </section>
+  
+      <!-- 📦 Receptkártyák helye -->
+      <section id="recipe-grid" class="recipe-grid">
+        <!-- ide töltjük majd be JS-ből a kártyákat -->
+      </section>
+
+    </main>
+  
+    <!-- <script type="module" src="src/recipe.js"></script> -->
+    <script type="module" src="src/recipe2.js"></script>
+    <!-- <script type="module" src="src/main.js"></script> -->
+ 
+  </body>
+</html>

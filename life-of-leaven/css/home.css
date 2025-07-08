@@ -1,0 +1,98 @@
+.home .box {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-size: cover !important;
+  background-position: center !important;
+  justify-content: flex-end; 
+}
+.home .box.first {
+  background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1731460202531-bf8389d565f7?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+}
+
+.home .box.second {
+  background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1559564121-073bd4080db7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat;
+  background-position: center;
+  background-size: cover;
+  justify-content: flex-start;
+}
+.home .box.third {
+  background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1508736375612-66c03035c629?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat;
+  background-position: center;
+  background-size: cover;
+  justify-content: flex-start;
+  top: -3rem;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: var(--gold) !important; 
+  font-size: 3rem; 
+}
+ 
+.home .content {
+  position: relative;
+  z-index: 2; 
+ margin: 0 auto; 
+} 
+ 
+.home h3 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: var(--gold); 
+ 
+} 
+.home p { 
+  margin-bottom:4rem;
+  line-height: 1.5;
+  text-align: left; 
+  color: var(--dark-logo);
+}  
+.home .box  .content {
+  width: 60rem;  
+}
+.home .box .content h2 {
+  font-size: 3.5rem;
+  color: white;
+  text-align: left;
+  margin-left: 1rem;
+}
+.home .box .content h3{
+  color:white;
+  text-align: left;
+  margin-left: 1rem;
+  /* background: -webkit-linear-gradient(var(--gold), var(--primary)); */
+  /* -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+}
+.home .box .content p{
+  color: white;
+  font-size: 1.5rem;
+  text-align: left;
+  margin-left: 1rem;
+}
+ .btn{
+  margin-top: 2rem;
+  font-size: 2rem;
+  border: 1px solid white;
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+  text-align: left;
+  margin-left: 1rem;
+ }
+ 
+@media (max-width: 768px) { 
+  .home{
+ height:auto;
+  }
+  .home .box{
+    height: 70vh;
+  }
+  .home p {
+    font-size: 1rem;
+  } 
+  .home .btn {
+    font-size: 1rem; 
+  } 
+}
+ 

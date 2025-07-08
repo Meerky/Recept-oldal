@@ -1,0 +1,101 @@
+<!-- <!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <title>Firebase Google Login teszt</title>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+    import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCvVADfu_BArWZBs9dU59SKo7n2SjLcxhk",
+      authDomain: "life-of-leaven.firebaseapp.com",
+      projectId: "life-of-leaven",
+      storageBucket: "life-of-leaven.firebasestorage.app",
+      messagingSenderId: "825863106726",
+      appId: "1:825863106726:web:3323f8e23d219ce6c30467",
+      measurementId: "G-W6PWRQ8P3Z"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+
+    const loginBtn = document.createElement("button");
+    loginBtn.textContent = "Google bejelentkezés";
+    document.body.appendChild(loginBtn);
+
+    const logoutBtn = document.createElement("button");
+    logoutBtn.textContent = "Kijelentkezés";
+    logoutBtn.style.display = "none";
+    document.body.appendChild(logoutBtn);
+
+    const status = document.createElement("p");
+    document.body.appendChild(status);
+
+    loginBtn.addEventListener("click", () => {
+      signInWithPopup(auth, provider)
+        .then((result) => {
+          console.log("Sikeres bejelentkezés:", result.user.email);
+          status.textContent = `Bejelentkezve: ${result.user.email}`;
+          loginBtn.style.display = "none";
+          logoutBtn.style.display = "inline";
+        })
+        .catch((error) => {
+          console.error("Bejelentkezési hiba:", error);
+          status.textContent = "Hiba a bejelentkezés során.";
+        });
+    });
+
+    logoutBtn.addEventListener("click", () => {
+      signOut(auth)
+        .then(() => {
+          status.textContent = "Kijelentkezve.";
+          loginBtn.style.display = "inline";
+          logoutBtn.style.display = "none";
+        });
+    });
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        status.textContent = `Bejelentkezve (onAuthStateChanged): ${user.email}`;
+        loginBtn.style.display = "none";
+        logoutBtn.style.display = "inline";
+        console.log("Bejelentkezett user UID:", user.uid);
+      } else {
+        status.textContent = "Nincs bejelentkezve.";
+        loginBtn.style.display = "inline";
+        logoutBtn.style.display = "none";
+      }
+      if (!auth.currentUser) {
+  alert("Nincs bejelentkezve!");
+  return;
+}
+if (auth.currentUser.uid !== "AG6270vZhmbju1ufqKwJWnNFzef2") {
+  alert("Nincs jogosultságod a feltöltéshez!");
+  return;
+}
+
+    });
+  </script>
+</head>
+<body>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <title>Firebase Google Login teszt</title>
+</head>
+<body>
+  <h2>Admin belépés</h2>
+  <button id="loginBtn" >Google bejelentkezés</button>
+  <button id="logoutBtn" style="display: none;">Kijelentkezés</button>
+  <p id="status">Nincs bejelentkezve.</p>
+
+ 
+  <script type="module" src="src/login-handler.js"></script>
+ 
+</body>
+</html>

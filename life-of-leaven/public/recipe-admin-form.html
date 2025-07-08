@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="css/recipe-admin-form.css">
+ 
+  <title>Recipe-form</title>
+</head>
+
+<body>
+
+  <button class="logOut">Kijelentkezés</button>
+  <div id="adminOnly">
+    <h2>Új recept feltöltése</h2>
+    <form id="recipeForm">
+      <label for="title">Megnevezés:</label>
+      <input type="text" id="title" placeholder="Megnevezés" required />
+
+      <label for="imageUrl">Kép URL:</label>
+      <input type="text" id="imageUrl" placeholder="Kép URL" required />
+
+      <label for="category">Kategória:</label>
+      <select id="category" required>
+        <option value="">-- Kérlek válassz kategóriát --</option>
+        <option value="levesek">Leves</option>
+        <option value="főétel">Főétel</option>
+        <option value="főzelék">Főzelék</option>
+        <option value="desszert">Desszert</option>
+        <option value="tészták">Tészta</option>
+        <option value="saláta">Saláta</option>
+        <option value="kenyerek">Kenyér</option>
+
+      </select>
+
+      <label for="description">Rövid leírás:</label>
+      <!-- <input type="text" id="description" placeholder="Pl. könnyű, gyorsan elkészíthető..." required /> -->
+      <textarea name="description" id="description" placeholder="Pl. könnyű, gyorsan elkészíthető..."></textarea>
+      <div class="section">
+        <label>Hozzávalók:</label>
+        <div id="ingredients-container">
+          <input type="text" name="ingredient" placeholder="Hozzávaló" required />
+        </div>
+        <button type="button" class="small-btn" onclick="addIngredient()">+ Hozzávaló</button>
+      </div>
+
+      <div class="section">
+        <label>Elkészítés lépései:</label>
+        <div id="steps-container">
+          <input type="text" name="step" placeholder="Lépés leírása" required />
+        </div>
+        <button type="button" class="small-btn" onclick="addStep()">+ Lépés</button>
+      </div>
+
+      <button type="submit">Recept mentése</button>
+    </form>
+  </div>
+
+
+  <section class="modification">
+    <h2>Recept módosítás</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Megnevezés</th>
+          <th>Kategória</th>
+          <th>Hozzávalók</th>
+          <th>Elkészítés</th>
+          <th>Leírás</th>
+          <th>Kép URL</th>
+          <th>Műveletek</th>
+        </tr>
+      </thead>
+      <tbody id="recipeTableBody">
+        <!-- Itt jelenik meg a tartalom -->
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Modal -->
+<div id="editModal" class="modal">
+  <div class="modal-content">
+    <h2>Recept szerkesztése</h2>
+    <form id="editForm">
+      <input type="hidden" id="editId">
+      <input type="text" id="editTitle" placeholder="Megnevezés" required />
+      <input type="text" id="editImageUrl" placeholder="Kép URL" required />
+      <input type="text" id="editCategory" placeholder="Kategória" required />
+      <textarea id="editDescription" placeholder="Elkészítés" required></textarea>
+      <textarea id="editIngredients" placeholder="Hozzávalók (vesszővel)" required></textarea>
+      <textarea id="editSteps" placeholder="Lépések (vesszővel)" required></textarea>
+      <button type="submit">Mentés</button>
+      <button type="button" id="closeModal">Mégse</button>
+    </form>
+  </div>
+</div>
+
+  <script type="module" src="src/recipe-admin.js"></script>
+  <script type="module" src="src/modification.js"></script>
+</body>
+
+</html>

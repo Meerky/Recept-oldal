@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+
+  <link rel="stylesheet" href="src/style.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/recipe.css">
+  
+    <title>Life of Leaven</title>
+  </head>
+  <body>
+
+    <header>
+      <div class="site-motto">
+        <h1>"Egyszerű örömök, természetes ötletek."</h1>
+      </div>
+        <nav class="navbar">
+    
+          
+          <ul class="nav-links">
+            <li><a href="#" class="active">Kezdőlap</a></li>
+            <li><a href="#recipes">Receptek</a></li>
+            <li><a href="#praktikak">Praktikák/ötletek</a></li>
+            <li><a href="#blog">Blog</a></li> 
+            
+          </ul>
+          <div class="menu-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+    
+    
+        </nav>
+      </header> 
+      <div class="content">
+    <main>
+ <!-- home start -->
+ <section class="home" id="home">
+  <div class="swiper home-slider">
+
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide">
+        <div class="box first">
+          <div class="content">
+            <h2>Melegítsd fel a lelked</h2>
+            <h3>Levesek, amikre mindig jólesik hazatérni</h3>
+            <p>Fedezd fel a házias, egyszerűen elkészíthető leveseinket – a klasszikusoktól az újdonságokig.</p>
+            <a href="#levesek" class="btn">Nézd meg</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="box second">
+
+          <div class="content">
+            <h2>Tápláló és színes</h2>
+            <h3>Főzelékek újragondolva</h3>
+            <p>Egészséges, laktató és változatos receptek, amik sosem unalmasak!</p>
+            <a href="#fozelekek" class="btn">Kipróbálom</a>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="box third">
+          <div class="content">
+            <h2>Valami édesre vágysz?</h2>
+            <h3>Sütemények és desszertek</h3>
+            <p>Gyorsan elkészíthető finomságok, ha meglepnéd magad vagy bárki mást.</p>
+            <a href="#sutemenyek" class="btn">Édességek</a>
+            
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="swiper-button-next" style="color: white;"></div>
+    <div class="swiper-button-prev" style="color: white;"></div>
+  </div>
+
+</section>
+
+ <!-- recipe start --> 
+    <section class="main-recipes">
+      <!-- <div id="search-section">
+        <input type="text" id="searchInput" placeholder="Keresés recept vagy alapanyag szerint...">
+        <button id="resetButton">Vissza a teljes listához</button>
+        <button id="searchByIngredients">Keresés</button>
+      </div> -->
+      
+    <h2>Receptek</h2>
+    <!-- <div id="recipe-list"></div> -->
+    <div id="recipes-container"></div>
+<div>
+  <a href="/recipe.html" class="main-recipe-btn">Összes recept</a>
+</div> 
+  </section>
+</main>
+  <aside>
+    <nav id="toc-container">
+      <h3>Tartalomjegyzék</h3>
+      <ul id="toc"></ul>
+    </nav>
+    
+  </aside>
+</div>
+  <!-- Swiper JS -->
+  <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script> -->
+
+ 
+  <script type="module"  src="/src/header.js"></script> 
+    <script type="module" src="/src/main.js"></script>
+ 
+    <script type="module" src="/src/home.js"></script>
+    </body>
+</html>

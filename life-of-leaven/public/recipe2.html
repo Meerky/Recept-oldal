@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../css/recipe2.css">
+  <link rel="stylesheet" href="../css/header.css">
+ 
+  <title>Receptek tároló</title>
+</head>
+<body>
+ 
+      <nav class="navbar"> 
+        <ul class="nav-links">
+          <li><a href="#" class="active">Kezdőlap</a></li>
+          <li><a href="#recipes">Receptek</a></li>
+          <li><a href="#praktikak">Praktikák/ötletek</a></li>
+          <li><a href="#startKitchen">Kezdő konyha</a></li> 
+          <li><a href="#blog">Blog</a></li> 
+          <li> 
+            <div id="search-section">
+            <input type="text" id="searchInput" placeholder="Keresés recept vagy alapanyag szerint...">
+            <!-- <button id="resetButton">Vissza a teljes listához</button> -->
+            <button id="searchByIngredients">Keresés</button>
+          </div></li>
+        </ul>
+        <div class="menu-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div> 
+      </nav>
+     
+    </header> 
+  <div class="header-title">
+    Receptek 
+  </div>
+  <section id="filter-buttons" class="filter-buttons">
+    <div class="btn-group" id="categoryButtons">
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-category="all">Mind</button>
+        <button class="filter-btn" data-category="Levesek">Levesek</button>
+        <button class="filter-btn" data-category="Főételek">Főételek</button>
+        <button class="filter-btn" data-category="Főzelékek">Főzelékek</button>
+        <button class="filter-btn" data-category="Desszertek">Desszertek</button>
+        <button class="filter-btn" data-category="Tészták">Tészták</button>
+        <button class="filter-btn" data-category="Saláta">Saláta</button>
+        <button class="filter-btn" data-category="Kenyerek">Kenyerek</button>
+      </div>
+  </div>
+  </section>
+ 
+  
+ <div class="wrapper2">
+  <div class="content">
+ 
+      <nav id="toc-container" >
+        <h3 class="tartalom">Tartalomjegyzék <span class="arrow">▾</span></h3>
+        <ul id="toc" ></ul>
+       
+      </nav>
+      
+  
+    <main>
+      <section class="main-recipes"> 
+      <div id="recipes-container" class="recipes"></div>
+  <div>
+    <a href="/recipe.html" class="main-recipe-btn">Összes recept</a>
+  </div> 
+    </section>
+
+    </main>
+
+    <aside>
+      <h3 class="blog">Blog</h3>
+			<ul>
+				<li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></li>
+				<li><a href="">Sed luctus eleifend congue</a></li>
+				<li><a href="">In in iaculis ligula. In viverra nisi et imperdiet posuere.</a></li>
+				<li><a href="">Nulla facilisi. Integer auctor fringilla diam, a ullamcorper turpis commodo at.</a></li>
+				<li><a href="">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere</a></li>
+				<li><a href="">Vivamus vitae mauris hendrerit, dignissim metus eu, semper magna</a></li>
+				<li><a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a></li>
+				<li><a href="">Sed luctus eleifend congue</a></li>
+				<li><a href="">In in iaculis ligula. In viverra nisi et imperdiet posuere.</a></li>
+				<li><a href="">Nulla facilisi. Integer auctor fringilla diam, a ullamcorper turpis commodo at.</a></li>
+				<li><a href="">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere</a></li>
+				<li><a href="">Vivamus vitae mauris hendrerit, dignissim metus eu, semper magna</a></li>
+			</ul>
+		</aside>
+  </div>
+ </div>
+
+ <footer class="footer">
+  <p>&copy; 2023 Meerkat konyha. || All Rights Reserved.</p>
+ </footer>
+ <script src="src/header.js"></script>
+ <script type="module" src="src/recipe3.js"></script>
+  
+ 
+</body>
+</html>

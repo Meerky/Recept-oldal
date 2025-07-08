@@ -1,0 +1,28 @@
+#recipe-detail {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+#recipe-detail h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#recipe-detail h2 {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
+
+#recipe-detail ul,
+#recipe-detail ol {
+  margin-left: 1.5rem;
+}
+
+#recipe-detail li {
+  margin-bottom: 0.5rem;
+}

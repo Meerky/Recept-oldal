@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recept kereső</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+    }
+    #filter-container {
+      margin-bottom: 1rem;
+    }
+    #ingredient-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    #checkbox-container {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      z-index: 1;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    #ingredient-dropdown:hover #checkbox-container {
+      display: block;
+    }
+    .recipe {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Recept kereső</h1>
+
+  <div id="filter-container">
+    <input type="text" id="searchInput" placeholder="Keresés receptnév vagy leírás alapján..." />
+
+    <div id="ingredient-dropdown">
+      <button>Hozzávalók kiválasztása</button>
+      <div id="checkbox-container">
+        <!-- Checkboxok ide jönnek JS-ből -->
+      </div>
+    </div>
+  </div>
+
+  <div id="results"></div>
+
+  <script>
+    const recipes = [
+      {
+        title: "Gulyásleves",
+        description: "Hagyományos magyar gulyás",
+        ingredients: ["hagyma", "marhahús", "burgonya"]
+      },
+      {
+        title: "Paprikás csirke",
+        description: "Tejfölös csirke pörkölt paprikával",
+        ingredients: ["csirke", "hagyma", "tejföl"]
+      },
+      {
+        title: "Lecsó",
+        description: "Zöldséges finomság",
+        ingredients: ["paprika", "paradicsom", "hagyma"]
+      }
+    ];
+
+    const searchInput = document.getElementById("searchInput");
+    const resultsContainer = document.getElementById("results");
+    const checkboxContainer = document.getElementById("checkbox-container");
+
+    function renderCheckboxes() {
+      const allIngredients = new Set();
+      recipes.forEach(r => r.ingredients.forEach(i => allIngredients.add(i.toLowerCase())));
+
+      allIngredients.forEach(ingredient => {
+        const label = document.createElement("label");
+        label.innerHTML = `
+          <input type="checkbox" value="${ingredient}" class="ingredient-checkbox"> ${ingredient}<br>
+        `;
+        checkboxContainer.appendChild(label);
+      });
+    }
+
+    function renderRecipes(list) {
+      resultsContainer.innerHTML = "";
+      if (list.length === 0) {
+        resultsContainer.innerHTML = "<p>Nincs találat.</p>";
+        return;
+      }
+
+      list.forEach(recipe => {
+        const div = document.createElement("div");
+        div.className = "recipe";
+        div.innerHTML = `<h3>${recipe.title}</h3><p>${recipe.description}</p><p><strong>Hozzávalók:</strong> ${recipe.ingredients.join(", ")}</p>`;
+        resultsContainer.appendChild(div);
+      });
+    }
+
+    function getSelectedIngredients() {
+      const checkboxes = document.querySelectorAll('.ingredient-checkbox');
+      return Array.from(checkboxes)
+        .filter(cb => cb.checked)
+        .map(cb => cb.value);
+    }
+
+    function searchByText(query, list) {
+      return list.filter(recipe =>
+        recipe.title.toLowerCase().includes(query) ||
+        recipe.description.toLowerCase().includes(query)
+      );
+    }
+
+    function filterByIngredients(selectedIngredients, list) {
+      if (selectedIngredients.length === 0) return list;
+      return list.filter(recipe =>
+        recipe.ingredients.some(ingredient => selectedIngredients.includes(ingredient.toLowerCase()))
+      );
+    }
+
+    function updateResults() {
+      const text = searchInput.value.trim().toLowerCase();
+      const selectedIngredients = getSelectedIngredients();
+
+      let result = recipes;
+
+      if (text) {
+        result = searchByText(text, result);
+      }
+
+      if (selectedIngredients.length > 0) {
+        result = filterByIngredients(selectedIngredients, result);
+      }
+
+      renderRecipes(result);
+    }
+
+    searchInput.addEventListener("input", updateResults);
+    checkboxContainer.addEventListener("change", updateResults);
+
+    renderCheckboxes();
+    renderRecipes(recipes);
+  </script>
+</body>
+</html>
