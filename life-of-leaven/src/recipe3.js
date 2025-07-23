@@ -35,65 +35,66 @@ function renderRecipes(recipes) {
     toc.appendChild(tocItem);
 
     // 👉 Receptkártya
-    const card = document.createElement('div');
-    card.classList.add('recipe-box');
-    card.id = anchorId;
+    // const card = document.createElement('div');
+    // card.classList.add('recipe-box');
+    // card.id = anchorId;
 
-    const img = document.createElement('img');
-    img.src = data.imageUrl || 'pics/placeholder.jpg';
-    img.alt = data.title || 'Recept képe';
+    // const img = document.createElement('img');
+    // img.src = data.imageUrl || 'pics/placeholder.jpg';
+    // img.alt = data.title || 'Recept képe';
 
-    const title = document.createElement('h2');
-    title.textContent = data.title;
+    // const title = document.createElement('h2');
+    // title.textContent = data.title;
 
-    const desc = document.createElement('p');
-    desc.textContent = data.presentation || 'Nincs rövid leírás.';
+    // const desc = document.createElement('p');
+    // desc.textContent = data.presentation || 'Nincs rövid leírás.';
+ 
+    // card.appendChild(img);
+    // card.appendChild(title);
+    // card.appendChild(desc);
+  
 
-    card.appendChild(img);
-    card.appendChild(title);
-    card.appendChild(desc);
-
-    container.appendChild(card);
+    // container.appendChild(card);
   });
 }
  
 fetchRecipes(); 
 //  kategória választó 
 // Kategória választó gombok lekérése
-const buttons = document.querySelectorAll('.filter-btn');
+// const buttons = document.querySelectorAll('.filter-btn');
  
-// végig megyünk  a kategória választó gombokon
-buttons.forEach((button)=>{
-  button.addEventListener('click',() =>{
-   // Gombok kinézetének frissítése: először eltávolítjuk az "active" osztályt az összes gombtól
-buttons.forEach((btn) => btn.classList.remove('active'));
-    // Majd hozzáadjuk az "active" osztályt a kiválasztott gombhoz
-button.classList.add('active');
+// // végig megyünk  a kategória választó gombokon
+// buttons.forEach((button)=>{
+//   button.addEventListener('click',() =>{
+//    // Gombok kinézetének frissítése: először eltávolítjuk az "active" osztályt az összes gombtól
+// buttons.forEach((btn) => btn.classList.remove('active'));
+//     // Majd hozzáadjuk az "active" osztályt a kiválasztott gombhoz
+// button.classList.add('active');
 
-//A gomb HTML-ben megadott 'data-category' attribútumát olvassuk ki
-const category = button.dataset.category;
+// //A gomb HTML-ben megadott 'data-category' attribútumát olvassuk ki
+// const category = button.dataset.category;
 
-//szűrés logikája
+// //szűrés logikája
 
-if(category === 'all'){
-  //ha a kategória === all akkor az összes receptet jelenitse meg
-  renderRecipes(allRecipes);
-}else{
+// if(category === 'all'){
+//   //ha a kategória === all akkor az összes receptet jelenitse meg
+//   renderRecipes(allRecipes);
+// }else{
 
- // Különben kiszűrjük csak azokat, amelyeknek a category mezője megegyezik
-  const filtered = allRecipes.filter(
-    // ha a recept kategórija megegyezik a kiválasztott kategóriával
-    (recipe) => recipe.category?.toLowerCase() === category.toLowerCase()
-   // Itt ellenőrizzük:
-        // - van-e 'category' mező (a "?" az opcionális láncolás, elkerüli a hibát, ha nincs)
-        // - ha van, kisbetűssé alakítjuk és összehasonlítjuk a kiválasztott kategóriával (szintén kisbetűsre alakítva)
+//  // Különben kiszűrjük csak azokat, amelyeknek a category mezője megegyezik
+//   const filtered = allRecipes.filter(
+//     // ha a recept kategórija megegyezik a kiválasztott kategóriával
+//     (recipe) => recipe.category?.toLowerCase() === category.toLowerCase()
+//    // Itt ellenőrizzük:
+//         // - van-e 'category' mező (a "?" az opcionális láncolás, elkerüli a hibát, ha nincs)
+//         // - ha van, kisbetűssé alakítjuk és összehasonlítjuk a kiválasztott kategóriával (szintén kisbetűsre alakítva)
     
-  );
-  //megjelenítjük a szűrt recepteket
-  renderRecipes(filtered);
-}
-  })
-})
+//   );
+//   //megjelenítjük a szűrt recepteket
+//   renderRecipes(filtered);
+// }
+//   })
+// })
 
 document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.querySelector('.tartalom');

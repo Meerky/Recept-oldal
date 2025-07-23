@@ -1,6 +1,8 @@
-  import {registerUser} from "./handlers/registerHandler.js";
+import { registerUser } from "./handlers/registerHandler.js";
 import { loginUser } from "./handlers/loginHandler.js";
-import { auth } from "./firebase.js";
+
+  import { auth } from "./firebase.js";
+
 document.addEventListener("DOMContentLoaded", () => {
   
    const registrationForm = document.getElementById("registration-form");

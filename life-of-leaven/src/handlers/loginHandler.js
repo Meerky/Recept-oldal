@@ -1,7 +1,7 @@
 import { auth, db } from "../firebase.js";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { query, collection, where, getDocs } from "firebase/firestore";
- 
+
 /**
  * Bejelentkezés logika Firebase Authentication.
  */
@@ -25,9 +25,11 @@ export async function loginUser(email, password) {
 
     const userData = querySnapshot.docs[0].data();
     const role = userData.role;
+    const name = userData.name || cleanEmail; // ha nincs név, akkor email
 
     localStorage.setItem("userRole", role);
-
+    localStorage.setItem("userName", name);
+    localStorage.setItem("userEmail", cleanEmail);
     console.log("Sikeres bejelentkezés:", cleanEmail);
     console.log("Szerepkör:", role);
 
@@ -44,7 +46,7 @@ export async function loginUser(email, password) {
       window.location.href = "/recipe-admin-form.html";
     } else {
       alert("Sikeres bejelentkezés, felhasználóként.");
-      window.location.href = "/user.html";
+      window.location.href = "/user.html"; colsole.log("sikeres bejelentkezés");
     }
 
     return user;

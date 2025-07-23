@@ -1,2 +1,12 @@
 1.bejelentkezés jelszóval
-2.
+ létrehozom a  Authentication-ban az uj admint megadom az emailt és a jelszót,
+ kimásolom az userUID-t .
+ a Cloud Firestore -ban az admin vagy ahogy elneveztem ahol a bejelentkezettek
+ adatait tartalmazza létrehozom az uj admint : add document és itt az id-hez kell bemésolni 
+ amit az Authentication-ból kimásoltam majd role:admin, email, és uid: ide is azt
+ másolom amit az Authentication-ból kimásoltam. 
+
+ Lehetnek más kiosztások is a role: user,látogató, stb. de akkor az a Rules-ban le kell
+ kezelni. és ha többféle jogosultság van akkor azt formon keresztül kell
+ regiszráció megoldani, és az admint kézzel átirni a firestoreban, 
+

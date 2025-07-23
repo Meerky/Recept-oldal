@@ -1,0 +1,6 @@
+@import './header/header.css';
+ 
+:root{
+  /* --header_bg : #cacbcc;  */
+  --header_bg : blue;
+}

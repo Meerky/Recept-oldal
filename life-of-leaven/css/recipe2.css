@@ -6,8 +6,9 @@ html {
 
 body {
   margin: 0;
-  font-family: georgia;
-  background: url('../pics/bg-body.png') #fff
+  
+   background: url('../pics/bg-body.png') #fff;
+
 }
 
 * {
@@ -17,7 +18,7 @@ body {
 }
 
 a {
-  color: #354052
+  color: #354052;   
 }
 
 /*
@@ -83,12 +84,13 @@ nav {
 nav ul {
   margin: 0;
   padding: 30px 10px 10px 10px;
-  list-style: none; margin: 0 auto;
+  list-style: none; 
+  margin: 0 auto;
 }
 
 nav li {
   border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
-
+ 
 }
 
 nav a {
@@ -191,16 +193,29 @@ footer p{
 .recipes {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -10px
+  margin: 0 -10px; 
 }
 
-.recipe-box {
+.recipe-card {
   flex: 1;
   min-width: 250px;
   background: #fff;
   border: 1px solid #ddd;
-  padding: 0 0 10px 0;
-  margin: 0 10px 20px 10px
+  padding: 0 0 1rem 0;
+  margin: 0 10px 20px 10px; 
+
+}
+.recipe-card .btn {
+  margin: 1rem !important;
+  padding: 0.6rem 1rem;
+  background-color: #222;
+  color: #fff;
+  width: auto;
+  text-align: center;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+ 
 }
 #searchByIngredients{
   padding: .5rem 1rem;
@@ -210,17 +225,17 @@ footer p{
   border-radius: .5rem;
   margin-left: .5rem;
 }
-.recipe-box h2 {
+.recipe-card h2 {
   font-size: 18px;
   padding: 10px 20px 0 20px;
   margin: 0
 }
 
-.recipe-box p {
+.recipe-card p {
   margin: 0;
-  padding: 10px 20px;
-  font-size: 14px;
-  line-height: 19px
+  padding: 1rem 1.3rem;
+  font-size: .9rem;
+  line-height: 1.1;
 } 
 /* tartalom jegyzék */
 
@@ -235,16 +250,16 @@ footer p{
   flex-direction: column;
 }
 .filter-btn{
-  color: #fff;
+  color: #fff;  
   background: url('../pics/bg-menu.jpg') center center !important;
   border-radius: .5rem;
   padding: .5rem 1rem;
-  font-size: 1rem;
+  font-size: 1rem;  
 }
 .filter-buttons{
   padding : 1rem; 
   display: flex;
-  justify-content: center;
+  justify-content: center; 
 }
 .blog{
   color: #354052;
