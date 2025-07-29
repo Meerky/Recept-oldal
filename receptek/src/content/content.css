@@ -1,0 +1,18 @@
+ .content {
+   background: var(--header_fonts);
+   color: var(--body_bg);
+   margin: 0;
+   z-index: -1;
+ }
+
+ .content ul li {
+   list-style: none;
+   border-bottom: 1px dashed var(--body_bg);
+ }
+
+ .content ul li a {
+   color: var(--body_bg);
+   text-decoration: none;
+   line-height: 2;
+
+ }

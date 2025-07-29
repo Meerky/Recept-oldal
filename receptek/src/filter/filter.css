@@ -1,0 +1,11 @@
+nav{
+  margin-top: 6rem;
+  padding: 1rem; 
+  z-index: 10;
+}
+.nav-filter-buttons{ 
+  display: flex;
+  justify-content: center; position: fixed;
+  width: 100%;  
+}
+ 

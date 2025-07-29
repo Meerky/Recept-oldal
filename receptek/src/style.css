@@ -1,6 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 @import './header/header.css';
+@import './filter/filter.css';
+@import './content/content.css';
+@import './main/main-recipes.css';
+
  
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 :root{
   /* --header_bg : #cacbcc;  */
-  --header_bg : blue;
+  --header_bg : #AAD15F;
+  --header_fonts: 	#2b0521;
+  --orange:  #FE7C39;
+  --btn_color :#9650B8;
+  --body_bg: #d1cce6;
+
+}
+
+body{
+  background:var(--body_bg) ;
+}
+img {
+  max-width: 100%
+}
+.btn{
+  background: var(--header_fonts);
+  color: var(--body_bg);
+    margin: 1rem !important;
+  padding: 0.6rem 1rem; 
+  width: auto;
+  text-align: center;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+ 
+.container{
+  display: flex; 
+  position: absolute;
+   margin-top: 14rem;
+ 
+}
+main{
+  display: flex;
+
+}
+.title{
+  font-size: 2rem; 
+  margin-bottom: 1rem; 
+}
+a
+ {
+  font-size: 1rem;  
+}
+.content,
+aside{
+  padding: 1rem;
+}
+aside h3{
+  color:var(--header_fonts)
+}
+aside ul li a{
+  font-size: 1rem;  
 }
